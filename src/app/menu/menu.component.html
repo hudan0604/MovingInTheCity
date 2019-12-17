@@ -1,0 +1,24 @@
+<!-- Lateral Vertical menu -->
+<aside
+  class="side-menu__container"
+  [ngClass]="{ 'side-menu__container-active': showMenu }"
+  (click)="toggleMenu()"
+>
+  <nav class="slide-menu" [ngClass]="{ 'slide-menu-active': showMenu }">
+    <div id="menu_layout">
+        <div id="menu_content">
+                <span class="menuItem w100">Login</span>
+                <span class="menuItem w100">Sign up</span>
+        </div>      
+    </div>
+  </nav>
+</aside>
+
+<!-- navbar always visible -->
+<nav id="menuNavbar">
+  <i (click)="toggleMenu()" class="fa fa-bars w05 center menuIcon"></i>
+  <h1 class="w75 center">MovingInTheCity</h1>
+  <!-- Available Languages -->
+  <img src="" />
+  <i class="w05" *ngIf="UserAuthenticated" class="fa fa-user"></i>
+</nav>

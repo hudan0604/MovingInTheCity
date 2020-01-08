@@ -6,19 +6,52 @@
 >
   <nav class="slide-menu" [ngClass]="{ 'slide-menu-active': showMenu }">
     <div id="menu_layout">
-        <div id="menu_content">
-                <span class="menuItem w100">Login</span>
-                <span class="menuItem w100">Sign up</span>
-        </div>      
+      <div id="menu_content">
+        <span
+          *ngIf="!userAuthenticated"
+          class="menuItem w100"
+          routerLink="/users/login"
+          >Login</span
+        >
+        <span
+          *ngIf="!userAuthenticated"
+          class="menuItem w100"
+          routerLink="/users/register"
+          >Sign up</span
+        >
+      </div>
     </div>
   </nav>
 </aside>
 
 <!-- navbar always visible -->
-<nav id="menuNavbar">
+<nav [ngClass]="{ navbarDarkMode: darkMode }" id="menuNavbar">
   <i (click)="toggleMenu()" class="fa fa-bars w05 center menuIcon"></i>
-  <h1 class="w75 center">MovingInTheCity</h1>
+  <h1 class="w75 center pointer" routerLink="/">MovingInTheCity</h1>
+  <!-- Toggle dark Mode -->
+  <span class="w05 pointer center">
+    <mat-slide-toggle
+      (click)="toggleDarkMode()"
+      matTooltip="Light/Dark Mode"
+      aria-label="Button that displays a tooltip when focused or hovered over"
+    ></mat-slide-toggle>
+  </span>
   <!-- Available Languages -->
-  <img src="" />
-  <i class="w05" *ngIf="UserAuthenticated" class="fa fa-user"></i>
+  <span class="w05 pointer"> </span>
+  <!-- User operations DIV -->
+  <div class="w10 center">
+    <span class="w50">
+      <!-- user profile icon -->
+      <i *ngIf="userAuthenticated" class="pointer center fas fa-user"></i>
+    </span>
+
+    <!-- Logout icon -->
+    <span class="w50">
+      <i
+        *ngIf="userAuthenticated"
+        (click)="logout()"
+        class="pointer center fas fa-sign-out-alt"
+      ></i>
+    </span>
+  </div>
 </nav>

@@ -14,7 +14,7 @@
 }
 
 .side-menu__container::before {
-  content: "";
+  content: '';
   cursor: pointer;
   position: absolute;
   display: block;
@@ -70,6 +70,7 @@
   display: flex;
   position: relative;
   box-shadow: 1px 1px 5px #afabb1;
+  background: #e9eaeffc;
 }
 .center {
   display: flex;
@@ -85,4 +86,8 @@
   padding: 0px 0px 0px 12%;
   background: #ffffff47;
   border-bottom: 1px solid whitesmoke;
+}
+.navbarDarkMode {
+  background: black !important;
+  color: white !important;
 }

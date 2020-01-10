@@ -1,6 +1,6 @@
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MenuComponent } from '../menu/menu.component';
+import { LocalStorageService } from '../core/services/localStorage/local-storage.service';
 import { ThemeService } from '../core/services/theme/theme.service';
 
 @Component({
@@ -15,9 +15,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.darkMode = this.themeService
-      .toggleDarkMode()
-      .subscribe((choice: any) => {
-        console.log(choice);
+      .getDarkMode()  
+      .subscribe((choice: any) => {        
         this.dark = choice;
       });
   }

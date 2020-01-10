@@ -6,14 +6,17 @@ import { LocalStorageService } from '../localStorage/local-storage.service';
   providedIn: 'root'
 })
 export class ThemeService {
-  darkMode = new BehaviorSubject<boolean>(false);
   choice = true;
+  darkMode = new BehaviorSubject<boolean>(
+    this.localStorageService.getItem('darkMode')
+  );
   constructor(private localStorageService: LocalStorageService) {}
-  toggleDarkMode(): any {
-    this.choice = !this.choice;
+  toggleDarkMode(darkMode: boolean): any {
     this.localStorageService.deleteItem('darkMode');
-    this.localStorageService.storeItem('darkMode', this.choice);
+    this.localStorageService.storeItem('darkMode', darkMode);
     this.darkMode.next(this.localStorageService.getItem('darkMode'));
+  }
+  getDarkMode(): any {
     return this.darkMode.asObservable();
   }
 }

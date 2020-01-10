@@ -55,7 +55,7 @@
 }
 #menu_layout {
   height: 47%;
-  background: linear-gradient(to right, #00ff9b, #5f84fb);
+  background: linear-gradient(to right, #cc00ff, #5f84fb);
   box-shadow: 0px 3px 10px grey;
   position: absolute;
   width: 100%;
@@ -69,14 +69,10 @@
 #menuNavbar {
   display: flex;
   position: relative;
-  box-shadow: 1px 1px 5px #afabb1;
-  background: #e9eaeffc;
+  box-shadow: 6px 6px 14px #9e92a5;
+  background: #93a3f7fc;
 }
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .menuIcon {
   font-size: 25px;
   z-index: 12;
@@ -88,6 +84,6 @@
   border-bottom: 1px solid whitesmoke;
 }
 .navbarDarkMode {
-  background: black !important;
+  background: #6c2b82 !important;
   color: white !important;
 }

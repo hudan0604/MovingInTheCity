@@ -57,6 +57,9 @@ $MovingInTheCity-theme: mat-light-theme(
 .w100 {
   width: 100%;
 }
+.h100 {
+  height: 100%;
+}
 .mAuto {
   margin: auto;
 }
@@ -67,7 +70,7 @@ $MovingInTheCity-theme: mat-light-theme(
   cursor: pointer;
 }
 .componentBackground_darkMode {
-  background: linear-gradient(to bottom, grey, black) !important;
+  background: linear-gradient(to bottom, #dabde6, #c8a1d8, #5c2165) !important;
 }
 
 html,
@@ -77,4 +80,15 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+@mixin centerH {
+  display: flex !important;
+  justify-content: center;
+}
+.center {
+  @include centerH();
+  align-items: center;
+}
+.centerHorizontally {
+  @include centerH();
 }
